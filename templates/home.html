@@ -1,1 +1,51 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %}{% block title %}Welcome-{% endblock title %}{% block content %}
+<style>
+    @media only screen and (max-width: 600px) {}
+</style>
+
+
+{% comment %} {% if success %}
+<div class="alert {{class}} alert-dismissible fade show" role="alert">
+    <strong>Success!</strong> {{message}}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endif %} {% if tasks|length == 0 %}
+<div class="alert alert-success text-md-center mt-5" role="alert">
+    <h4 class="alert-heading">Well done!</h4>
+    <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
+    <hr>
+    <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
+</div>
+{% else %} {% endcomment %}
+<div class="container py-4">
+    <h1 class="text-center">Your user's</h1>
+    <table class="table mx-3 my-5">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">username</th>
+                <th scope="col">email</th>
+                <th scope="col">address</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+            <tr>
+                <th scope="row">{{forloop.counter}}</th>
+                <td>{{user.username}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.address}}</td>
+
+                <td>
+                    <div class="buttons">
+                        <a class="btn btn-outline-primary" href="/edit/{{user.id}}">Update</a>
+                        <a class="btn btn-outline-danger" href="/delete/{{user.id}}">Delete</a>
+                    </div>
+                </td>
+
+
+                {% endfor %}
+        </tbody>
+    </table>
+</div>{% endblock content %}
