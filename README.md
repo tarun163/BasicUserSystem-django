@@ -16,3 +16,8 @@ Migrate the changes to the database $ python manage.py migrate
 
 Run the server $ python manage.py runserver --noreload
 
+# For API
+first register your self
+create token by  ' http POST http://127.0.0.1:8000/api/gettoken/ username="admin" password="admin" '
+verify token , refresh token, get data, post data, update and delete data by JWT token 
+
