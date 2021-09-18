@@ -1,6 +1,6 @@
 {% extends 'base.html' %}{% block title %}Signup-here{% endblock title %}{% block content %}
-<div class="container">
-    <div>
+<div class="container card shadow" style="width: 40%; margin-top:3rem;">
+    <div class="p-3">
         <form action="" method="POST">
             {% csrf_token %}
             <div class="mb-3">
@@ -21,7 +21,7 @@
                 <label for="cpassword" class="form-label">Confirm Password</label>
                 <input type="password" class="form-control" id="cpassword" name="cpassword">
             </div>
-            <div class="form-floating">
+            <div class="form-floating mb-3">
                 <label for="add" class="form-label">Addresss</label>
                 <textarea class="form-control" placeholder="Address here" id="add" name="add" style="height: 100px"></textarea>
             </div>

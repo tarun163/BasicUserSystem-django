@@ -11,8 +11,8 @@ from django.contrib.auth.decorators import login_required
 def home(request):
     if request.user.is_authenticated:
         users = UserInfo.objects.all()
-        for user in users:
-            print(user.username, user.email, user.address, user.created_on)
+        # for user in users:
+        #     print(user.username, user.email, user.address, user.created_on)
         context = {'success':True, 'users':users}    
         return render(request, 'home.html', context)
     else:
@@ -23,6 +23,11 @@ def delete(request, id):
     return redirect('home')
 
 def edit(request, id):
+    if request.method == 'POST':
+        print(id)
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+        print(email)
     return redirect('home')    
 
 def login(request):

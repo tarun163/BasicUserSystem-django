@@ -23,9 +23,10 @@
         <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">username</th>
-                <th scope="col">email</th>
-                <th scope="col">address</th>
+                <th scope="col">Username</th>
+                <th scope="col">Email</th>
+                <th scope="col">Address</th>
+                <th scope="col">Create/Update On</th>
 
             </tr>
         </thead>
@@ -36,10 +37,11 @@
                 <td>{{user.username}}</td>
                 <td>{{user.email}}</td>
                 <td>{{user.address}}</td>
+                 <td>{{user.created_on}}</td>
 
                 <td>
                     <div class="buttons">
-                        <a class="btn btn-outline-primary" href="/edit/{{user.id}}">Update</a>
+                        <a class="btn btn-outline-primary" href="/edit/{{user.id}}">Edit</a>
                         <a class="btn btn-outline-danger" href="/delete/{{user.id}}">Delete</a>
                     </div>
                 </td>

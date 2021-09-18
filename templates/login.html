@@ -1,6 +1,6 @@
 {% extends 'base.html' %}{% block title %}Login-here{% endblock title %} {% block content %}
-<div class="container">
-    <div>
+<div class="container card shadow" style="width: 40%; margin-top:10rem; ">
+    <div class="p-3">
         <form action="" method="POST">
             {% csrf_token %}
             <div class="mb-3">
@@ -13,8 +13,8 @@
                 <input type="password" class="form-control" id="password" name="password">
             </div>
 
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Login</button>
         </form>
-        <a href="{% url 'signup' %}">Register</a>
+        <a href="{% url 'signup' %}" class="p-3">Sign-up</a>
     </div>
 </div>{% endblock content %}
