@@ -1,7 +1,13 @@
 {% extends 'base.html' %}{% block title %}Login-here{% endblock title %} {% block content %}
+{% if success %}
+<div class="alert alert-{{class}} alert-dismissible fade show" role="alert">
+    <strong>Oops!</strong> {{msg}}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endif %}
 <div class="container card shadow" style="width: 40%; margin-top:10rem; ">
     <div class="p-3">
-        <form action="" method="POST">
+        <form action="/login/" method="POST">
             {% csrf_token %}
             <div class="mb-3">
                 <label for="email" class="form-label">Email address</label>
